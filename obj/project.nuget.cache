@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "d5lfWlNJSJEcwT40vuowXkMrcFDF1kIqCLlyQn3/FSUb6D4irbqCqIhlqe3w6KE3L/xMiaEQnB0+Hh1wmpL8Yg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\luism\\houserental.v.0.1\\houserentalv.0.1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luism\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

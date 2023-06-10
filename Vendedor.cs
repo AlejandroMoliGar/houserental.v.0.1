@@ -48,43 +48,173 @@ public class Seller
             Seller newHouseForSale = new Seller();
 
             Console.Write("Price: ");
-            newHouseForSale.Price = Convert.ToDecimal(Console.ReadLine());
+            decimal Price = Convert.ToDecimal(Console.ReadLine());
+            if (Price < 0)
+            {
+                Console.WriteLine("El precio ingresado no es válido. Debe ser un valor positivo.");
+            }
+
 
             Console.Write("Location: ");
-            newHouseForSale.Location = Console.ReadLine();
+            string Location = string.Empty;
+            while (string.IsNullOrEmpty(Location))
+            {
+                Console.Write("Ubicacion: ");
+                Location = Console.ReadLine();
+            }
 
+            
             Console.Write("Square Meters: ");
-            newHouseForSale.SquareMeters = Convert.ToDecimal(Console.ReadLine());
+            decimal squareMeters;
+
+            while (!decimal.TryParse(Console.ReadLine(), out squareMeters) || squareMeters <= 0)
+            {
+                Console.WriteLine("Cantidad inválida de metros cuadrados. Por favor, ingrese un valor numérico válido y mayor que cero.");
+                Console.Write("Square Meters: ");
+            }
+            newHouseForSale.SquareMeters = squareMeters;
+
 
             Console.Write("Number of Rooms: ");
-            newHouseForSale.NumberOfRooms = Convert.ToInt32(Console.ReadLine());
+            int numberOfRooms;
+
+            while (!int.TryParse(Console.ReadLine(), out numberOfRooms) || numberOfRooms <= 0)
+            {
+                Console.WriteLine("Cantidad inválida de habitaciones. Por favor, ingrese un valor numérico válido y mayor que cero.");
+                Console.Write("Number of Rooms: ");
+            }
+
+            newHouseForSale.NumberOfRooms = numberOfRooms;
+
+  
 
             Console.Write("Furnished (true/false): ");
-            newHouseForSale.Furnished = Convert.ToBoolean(Console.ReadLine());
+            bool furnished;
+
+            while (!bool.TryParse(Console.ReadLine(), out furnished))
+            {
+                Console.WriteLine("Valor inválido. Por favor, ingrese 'true' para sí o 'false' para no.");
+                Console.Write("Furnished (true/false): ");
+            }
+
+            newHouseForSale.Furnished = furnished;
+
 
             Console.Write("Free of Liens (true/false): ");
-            newHouseForSale.FreeOfLiens = Convert.ToBoolean(Console.ReadLine());
+            bool freeOfLiens;
+
+            while (!bool.TryParse(Console.ReadLine(), out freeOfLiens))
+            {
+                Console.WriteLine("Valor inválido. Por favor, ingrese 'true' para sí o 'false' para no.");
+                Console.Write("Free of Liens (true/false): ");
+            }
+
+            newHouseForSale.FreeOfLiens = freeOfLiens;
+
 
             Console.Write("Property Type: ");
-            newHouseForSale.PropertyType = Console.ReadLine();
+            string propertyType = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(propertyType))
+            {
+                Console.WriteLine("Tipo de propiedad inválido. Por favor, ingrese un tipo de propiedad válido.");
+                Console.Write("Property Type: ");
+                propertyType = Console.ReadLine();
+            }
+
+            newHouseForSale.PropertyType = propertyType;
+
 
             Console.Write("Payment Type: ");
-            newHouseForSale.PaymentType = Console.ReadLine();
+            string paymentType = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(paymentType))
+            {
+                Console.WriteLine("Tipo de pago inválido. Por favor, ingrese un tipo de pago válido.");
+                Console.Write("Payment Type: ");
+                paymentType = Console.ReadLine();
+            }
+
+            newHouseForSale.PaymentType = paymentType;
+
+
 
             Console.Write("Seller Name: ");
-            newHouseForSale.SellerName = Console.ReadLine();
+            string sellerName = Console.ReadLine();
 
+            while (string.IsNullOrWhiteSpace(sellerName))
+            {
+                Console.WriteLine("Nombre de vendedor inválido. Por favor, ingrese un nombre de vendedor válido.");
+                Console.Write("Seller Name: ");
+            sellerName = Console.ReadLine();
+            }
+
+            newHouseForSale.SellerName = sellerName;
+            
+            
             Console.Write("Phone Number: ");
-            newHouseForSale.PhoneNumber = Convert.ToInt32(Console.ReadLine());
+            int phoneNumber;
+
+            while (!int.TryParse(Console.ReadLine(), out phoneNumber) || phoneNumber <= 0)
+            {
+                Console.WriteLine("Número de teléfono inválido. Por favor, ingrese un número de teléfono válido.");
+                Console.Write("Phone Number: ");
+            }
+
+            newHouseForSale.PhoneNumber = phoneNumber;
+
 
             Console.Write("Email: ");
-            newHouseForSale.Email = Console.ReadLine();
+            string email = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(email) || !IsValidEmail(email))
+            {
+                Console.WriteLine("Dirección de correo electrónico inválida. Por favor, ingrese una dirección de correo electrónico válida.");
+                Console.Write("Email: ");
+                email = Console.ReadLine();
+            }
+
+            
+            static bool IsValidEmail(string email)
+            {
+            try
+                {
+                var address = new System.Net.Mail.MailAddress(email);
+                return address.Address == email;
+                }
+                catch
+                {
+                return false;
+                }
+            }
+            newHouseForSale.Email = email;
+
+
 
             Console.Write("Description: ");
-            newHouseForSale.Description = Console.ReadLine();
+            string description = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(description))
+            {
+                Console.WriteLine("Descripción inválida. Por favor, ingrese una descripción válida.");
+                Console.Write("Description: ");
+                description = Console.ReadLine();
+            }
+
+            newHouseForSale.Description = description;
+
 
             Console.Write("Photo: ");
-            newHouseForSale.Photo = Console.ReadLine();
+            string photo = Console.ReadLine();
+
+            while (string.IsNullOrWhiteSpace(photo))
+            {
+                Console.WriteLine("Foto inválida. Por favor, ingrese una foto válida.");
+                Console.Write("Photo: ");
+                photo = Console.ReadLine();
+            }
+
+            newHouseForSale.Photo = photo;
 
             // Add the new object to the list
             houseForSaleList.Add(newHouseForSale);

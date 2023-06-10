@@ -1,0 +1,5 @@
+C:\Users\luism\houserental.v.0.1\obj\Debug\net7.0\houserentalv.0.1.csproj.AssemblyReference.cache
+C:\Users\luism\houserental.v.0.1\obj\Debug\net7.0\houserentalv.0.1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luism\houserental.v.0.1\obj\Debug\net7.0\houserentalv.0.1.AssemblyInfoInputs.cache
+C:\Users\luism\houserental.v.0.1\obj\Debug\net7.0\houserentalv.0.1.AssemblyInfo.cs
+C:\Users\luism\houserental.v.0.1\obj\Debug\net7.0\houserentalv.0.1.csproj.CoreCompileInputs.cache
